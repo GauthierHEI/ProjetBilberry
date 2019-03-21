@@ -1,0 +1,129 @@
+
+/* HEADER */
+
+header{
+    padding: 1%;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    background: white;
+    width: 100%;
+    display: flex;
+}
+
+.header-logo{
+    width: 20%;
+    margin-left: 5%;
+}
+
+.header-logo img{
+    width: 50%;
+}
+
+.header-logo:hover{
+    cursor: pointer;
+}
+
+.header-menu{
+    width: 60%;
+    align-self: center;
+}
+
+.header-menu a{
+    color: black;
+    padding: 2%;
+    margin-right: 5%;
+    text-decoration: none;
+}
+
+.header-menu a:hover{
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+/* GENERAL */
+
+.content{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #eeeeee;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome{
+    margin: auto;
+    font-size: 1.5vw;
+}
+
+
+/* IMAGE LIST */
+
+.True{
+    color: green;
+}
+
+.False{
+    color: red;
+}
+
+.container{
+    width: 15%;
+    height: auto;
+    background-color: white;
+    padding: 1%;
+    margin: 2% auto;
+    display: grid;
+}
+
+.container img {
+    width: 90%
+}
+
+/* IMAGE UPLOADER */
+
+.validation{
+    color: green;
+}
+
+.uploader{
+    margin: auto;
+    text-align: center;
+    padding: 2%;
+    background: white;
+    width: 40%;
+    height: auto;
+    margin-top: 5%;
+}
+
+.uploader li{
+    color: red;
+    list-style-type: none;
+}
+
+/* IMAGE VIEWER */
+
+.image-container{
+    width: 100%;
+    height: 500px;
+}
+
+.image-container img{
+    height: 100%;
+    width: auto;
+    margin: auto;
+}
+
+.inactive{
+    display: none;
+}
+
+.active{
+    display: block;
+}

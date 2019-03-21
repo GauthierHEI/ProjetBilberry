@@ -1,0 +1,21 @@
+{% extends 'BillBerryImages/base.html' %}
+
+{% block content %}
+
+     {% for image in images %}
+         <div class="container">
+
+             <img src="{{image.image.url}}"/>
+
+             <label>{{ image.name }}</label>
+
+             <label>{{ image.upload_time |date:"SHORT_DATETIME_FORMAT"}} </label>
+
+             <label>Verified : <label class="{{ image.verified }}">{{ image.verified }}</label> </label>
+
+             <label>Rejected : <label class="{{ image.rejected }}">{{ image.rejected }}</label> </label>
+
+         </div>
+    {% endfor %}
+
+{% endblock %}

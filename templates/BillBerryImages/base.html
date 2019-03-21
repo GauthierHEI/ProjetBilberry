@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {% load staticfiles %}
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Bilberry</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+    </head>
+    <body>
+
+        <header>
+
+            <div class="header-logo">
+                <a href="bilberryIndex">
+                    <img src="{% static 'Bilberry-logo.png'  %}" class="bilberry_img" alt="logo" />
+                </a>
+            </div>
+
+            <div class="header-menu">
+                    <a href="imageListed">Images List</a>
+                    <a href="imageUploader">Image Uploader</a>
+                    <a href="imageViewer">Image Viewer</a>
+            </div>
+
+        </header>
+
+        <div class="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,81 @@
+{% extends 'BillBerryImages/base.html' %}
+
+{% block content %}
+
+    <div class="image-container"> {% csrf_token %}
+
+        {% for image in images %}
+
+            <img class="inactive" src="{{ image.image.url }}" id="{{ image.pk }}"/>
+
+        {% endfor %}
+
+    </div>
+
+    <script>
+
+        let  id = 30;
+
+        window.onkeydown= ImageChange;
+
+        function ImageChange(e) {
+            e = e || window.event;
+            let image = document.getElementById(id);
+            let precedent = document.getElementById(id - 1);
+            let suivant = document.getElementById(id + 1);
+            console.log(e.keyCode);
+
+             if (e.keyCode === 37 && precedent != null) { //LeftArrow
+                image.className = "inactive";
+                precedent.className = "active";
+                id = id - 1;
+                console.log(id);
+
+            } else if (e.keyCode === 39 && suivant != null) { //RightArrow
+                image.className = "inactive";
+                suivant.className = "active";
+                id = id + 1;
+                console.log(id);
+
+            }
+        }
+        /* FAILED TEST
+        $(window).onkeydown(function(e){
+            console.log(e.keyCode);
+            let image = $(#id);
+            let precedent = $(#id-1);
+            let suivant = $(#id+1);
+            
+            if (e.keyCode === 80) { //P
+                $.ajax({
+                url: 'imageUpdater',
+                data: {
+                  'id':id,
+                  'update': 'approved',
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+              });
+            }
+            else if (e.keyCode === 88) { //X
+                $.ajax({
+                type: "POST",
+                url: 'imageUpdater',
+                data: {
+                  'id':id,
+                  'update': 'rejected',
+                },
+                dataType: 'json',
+                success: function (data) {
+                    console.log(data);
+                }
+              });
+            }
+
+        }) */
+
+    </script>
+    
+{% endblock %}
